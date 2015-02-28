@@ -1,2 +1,34 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Welcome, <%= @user.first_name %>.</h1>
+
+<h3><%= @user.first_name %> <%= @user.last_name %></h3>
+
+<div class='profile_details'>
+  <ul>
+    <li>
+      Email: <%= @user.email %>
+    </li>
+    <li>
+      Postal Code: <%= @user.postal_code %>
+    </li>
+    <li>
+      Country: <%= @user.country %>
+    </li>
+    <li>
+      Program: <%= @user.program_attended %>
+    </li>
+    <li>
+      Campus: <%= @user.campus %>
+    </li>
+    <li>
+      Cohort: <%= @user.cohort %>
+    </li>
+    <li>
+      About Me: <%= @user.bio %>
+    </li>  
+  </ul>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+
