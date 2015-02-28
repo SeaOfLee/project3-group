@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.is_admin = false
     if @user.save
+      session['user_id'] = @user.id.to_s
       redirect_to users_path
     else
       render 'new'
