@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(params[:comment].permit(:comment))
+    @comment = @post.comments.create(params[:comment].permit(:content))
 
     if @comment.save
       redirect_to post_path(@post)
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
 
-    if @comment.update(params[:comment].permit(:comment))
+    if @comment.update(params[:comment].permit(:content))
       redirect_to post_path(@post)
     else
       render 'edit'
