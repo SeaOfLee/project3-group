@@ -3,7 +3,8 @@
 
   <% @posts.each do |post| %>
     <h3><%= link_to post.title, post %></h3>
-    <p>Published <%= time_ago_in_words(post.created_at) %> ago by User
+    <p>Published <%= time_ago_in_words(post.created_at) %> ago by User</p>
+    <p># replies</p>
     <hr />
   <% end %>
 
