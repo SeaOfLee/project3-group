@@ -2,13 +2,18 @@
 <p>Find me in app/views/posts/show.html.erb</p>
 
     <h2><%= @post.title %></h2>
-    <p>Published <%= time_ago_in_words(@post.created_at) %> ago by User<br />
+    <p>Published <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.first_name %> <%= @post.user.last_name %><br />
 
     <p><%= simple_format(@post.content) %></p>
 
-    <%= link_to "Edit", edit_post_path(@post) %>
-    <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to do this? Be warned, it's permanent!" }%>
+    <% if current_user == @post.user %>
+      <%= link_to "Edit", edit_post_path(@post) %>
+    <% end %>
 
+    <% if current_user == @post.user %>
+      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to do this? Be warned, it's permanent!" }%>
+    <% end %>
+    
     <h5><%= @post.comments.count %> replies</h4>
       <%= render @post.comments %>
       <h4>Comment on post</h4>
