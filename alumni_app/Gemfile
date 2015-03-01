@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk', '< 2.0'
+gem 'figaro'
 # paperclip gem for images
 gem "paperclip", "~> 4.2"
 # bcrypt gem for authentication
