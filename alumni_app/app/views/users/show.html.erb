@@ -3,6 +3,7 @@
 <h3><%= @user.first_name %> <%= @user.last_name %></h3>
 
 <div class='profile_details'>
+  Pic: <%= image_tag @user.avatar.url %>
   <ul>
     <li>
       Email: <%= @user.email %>
