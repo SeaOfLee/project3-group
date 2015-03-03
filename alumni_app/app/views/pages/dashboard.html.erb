@@ -1,0 +1,22 @@
+<h1>Pages#dashboard</h1>
+<p>Find me in app/views/pages/dashboard.html.erb</p>
+
+<h2>Posts</h2>
+  <% @posts.each do |post| %>
+    <h3><%= link_to post.title, post %></h3>
+    <p>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.first_name %> <%= post.user.last_name %></p>
+    <p><%= post.comments.count %> replies</p>
+    <hr />
+  <% end %>
+  <%= link_to "See more Posts", posts_path %>
+
+<h2>Jobs</h2>
+  <% @jobs.each do |job| %>
+    <h3><%= link_to job.job_title, job %></h3>
+    <p><%= job.company %>, <%= job.location %></p>
+    <p>Posted <%= time_ago_in_words(job.created_at) %> ago by <%= job.user.first_name %> <%= job.user.last_name %></p>
+    <hr />
+  <% end %>
+  <%= link_to "See more Jobs", jobs_path %>
+
+<h2>Events</h2>
