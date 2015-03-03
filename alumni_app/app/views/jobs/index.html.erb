@@ -5,6 +5,9 @@
 
 <% @jobs.each do |job| %>
   <h3><%= link_to job.job_title, job %></h3>
-  <p>Published <%= time_ago_in_words(job.created_at) %> ago by User</p>
+  <p><%= job.company %>, <%= job.location %></p>
+  <p>Posted <%= time_ago_in_words(job.created_at) %> ago by User</p>
   <hr />
 <% end %>
+
+<%= will_paginate @jobs %>
