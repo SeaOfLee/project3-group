@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  private
+
   #returns nil if user is not logged in
   def current_user
     User.where(id: session["user_id"]).first

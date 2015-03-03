@@ -5,7 +5,7 @@ gem 'figaro'
 # paperclip gem for images
 gem "paperclip", "~> 4.2"
 # bcrypt gem for authentication
-gem 'bcrypt', '~> 3.1.7'
+gem "bcrypt-ruby", :require => "bcrypt"
 # Add searchkick gem
 gem "searchkick"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
