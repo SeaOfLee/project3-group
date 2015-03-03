@@ -1,0 +1,12 @@
+<h1>Edit Your Event</h1>
+<p>Find me in app/views/events/edit.html.erb</p>
+
+<%= form_for @event do |f| %>
+  <%= f.text_field :event_name, :placeholder => "Enter the event name..." %><br />
+  <%= f.text_field :event_location, :placeholder => "Enter the event location..." %><br />
+  <%= f.text_area :event_description, :placeholder => "Describe the event..." %><br />
+  <%= f.text_field :event_site, :placeholder => "Link to the event website..." %><br />
+  <%= f.submit 'Update your event'  %><br />
+<% end %>
+
+<%= link_to "Cancel", event_path %>
