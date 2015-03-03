@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'pages/dashboard'
-
   resources :posts do
     resources :comments
   end
 
+  resources :events
   resources :jobs
   resources :users
   resource :sessions, only: [:new, :create, :destroy]

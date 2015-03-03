@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :posts
   has_many :jobs
+  has_many :events
 
 
   has_attached_file :avatar, :styles => {
