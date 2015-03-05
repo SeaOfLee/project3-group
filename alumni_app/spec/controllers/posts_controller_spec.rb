@@ -1,1 +1,0 @@
-posts_controller_spec.rb
