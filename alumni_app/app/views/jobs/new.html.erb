@@ -4,9 +4,11 @@
   <%= form_for @job do |f| %>
     <%= f.text_field :job_title, :placeholder => "Enter the job title..." %><br />
     <%= f.text_field :company, :placeholder => "Enter the company name..." %><br />
-    <%= f.text_field :location, :placeholder => "Enter the job location..." %><br />
+    <%= f.text_field :location, id: 'location', :placeholder => "Enter the job location..." %><br />
     <%= f.text_field :job_type, :placeholder => "Choose the job type..." %><br />
     <%= f.text_area :description, :placeholder => "Give more details about the job here..." %><br />
     <%= f.text_field :contact, :placeholder => "Enter the contact email.." %><br />
     <%= f.submit 'Post the job'  %><br />
   <% end %>
+
+<%= render 'layouts/places' %>
