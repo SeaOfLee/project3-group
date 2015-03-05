@@ -1,0 +1,58 @@
+<table>
+<<<<<<< HEAD
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Admin?</th>
+      <th>Postal Code</th>
+      <th>Country</th>
+      <th>Program Attended</th>
+      <th>Campus</th>
+      <th>Cohort</th>
+      <th>Bio</th>
+      <th colspan="9"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |u| %>
+      <tr>
+        <td><%= u.first_name %> <%= u.last_name %></td>
+        <td><%= u.email %></td>
+        <td><%= u.is_admin %></td>
+        <td><%= u.postal_code %></td>
+        <td><%= u.country %></td>
+        <td><%= u.program_attended %></td>
+        <td><%= u.campus %></td>
+        <td><%= u.campus %></td>
+        <td><%= u.cohort %></td>
+        <td><%= u.bio %></td>
+        <td><%= link_to 'View ', u %>|</td>
+        <td><%= link_to ' Edit ', edit_user_path(u) %> |</td>
+        <td><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+=======
+    <tbody>
+        <% @users.each do |u| %>
+          <tr>
+            <td><%= u.first_name %> <%= u.last_name %></td>
+            <td><%= u.email %></td>
+            <td><%= u.is_admin %></td>
+            <td><%= u.postal_code %></td>
+            <td><%= u.country %></td>
+            <td><%= u.program_attended %></td>
+            <td><%= u.campus %></td>
+            <td><%= u.campus %></td>
+            <td><%= u.cohort %></td>
+            <td><%= u.bio %></td>
+            <td><%= link_to 'View ', u %>|</td>
+            <td><%= link_to ' Edit ', edit_user_path(u) %> |</td>
+            <td><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+>>>>>>> dcb82cc70bbe0a483816b3cf65603d9c649366ca
+</table>

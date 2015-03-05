@@ -4,9 +4,17 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+<<<<<<< HEAD
   resources :events
   resources :jobs
-  resources :users
+  resources :users do
+=======
+  resources :users do 
+>>>>>>> dcb82cc70bbe0a483816b3cf65603d9c649366ca
+    collection do
+      get 'search'
+    end
+  end
   resource :sessions, only: [:new, :create, :destroy]
 
   get 'pages/dashboard'
