@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation
+  def user_params
+      params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    end
 
   searchkick
   has_secure_password
