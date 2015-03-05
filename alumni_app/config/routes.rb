@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   resources :events
   resources :jobs
-  resources :users
+  resources :users do
+    collection do
+      get 'search'
+    end
+  end
   resource :sessions, only: [:new, :create, :destroy]
 
   get 'pages/dashboard'
