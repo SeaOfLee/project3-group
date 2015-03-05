@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :posts do
     resources :comments
   end
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
 
   get 'pages/dashboard'
+  root to: "users#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
