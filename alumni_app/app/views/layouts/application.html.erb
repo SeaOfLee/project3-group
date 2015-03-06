@@ -3,28 +3,46 @@
 <head>
   <title>AlumniApp</title>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;libraries=places"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= form_tag search_users_path, method: :get do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag("Search") %>
-<% end %>
 
-<%= yield %>
-  <hr>
-  Current User ID: <%= session["user_id"].inspect %><br>
-  <%= params.inspect %>
-  <br>
-  <% if current_user != nil %>
-  Logged in as: <%= current_user.email %> |
-  <!-- method delete overrides button's normal behavior of POST -->
-    <%= link_to "Log Out", sessions_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Sign In', new_sessions_path %>
-  <% end %>
+  <div class="container">
+    <div class="sidenav_container">
+      <ul>
+        <li><a href="/pages/dashboard">Home</a></li>
+        <li><a href="/users">Alumni</a></li>
+        <li><a href="/posts">Forum</a></li>
+        <li><a href="/jobs">Jobs</a></li>
+        <li><a href="/events">Events</a></li>
+      </ul>
+      <p class="copyright">Made with &hearts; by Katie Kelleher, Lee Richardson &amp; Lauren Pawell.
+    </div>
+
+    <div class="main_container">
+    <%= form_tag search_users_path, method: :get do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+    <%= yield %>
+      <hr>
+      Current User ID: <%= session["user_id"].inspect %><br>
+      <%= params.inspect %>
+      <br>
+      <% if current_user != nil %>
+      Logged in as: <%= current_user.email %> |
+      <!-- method delete overrides button's normal behavior of POST -->
+        <%= link_to "Log Out", sessions_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign In', new_sessions_path %>
+      <% end %>
+    </div>
+
+  </div>
 </body>
 </html>

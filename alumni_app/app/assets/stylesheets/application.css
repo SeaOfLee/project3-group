@@ -13,3 +13,107 @@
  *= require_tree .
  *= require_self
  */
+
+ *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ /* Small screens (default) */
+ html { font-size: 100%; }
+
+ /* Medium screens (640px) */
+ @media (min-width: 40rem) {
+   html { font-size: 112%; }
+ }
+
+ /* Large screens (1024px) */
+ @media (min-width: 64rem) {
+   html { font-size: 120%; }
+ }
+
+/* --- Overall page layout ---- */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  max-width: rem-calc(100%);
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 40rem) {
+  .column {
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .column.full { width: 100%; }
+  .column.two-thirds { width: 66.7%; }
+  .column.half { width: 50%; }
+  .column.third { width: 33.3%; }
+  .column.fourth { width: 25%; }
+  .column.flow-opposite { float: right; }
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* --- Navigation ---*/
+
+.sidenav_container {
+  max-width: rem-calc(25%);
+  width: 25%;
+  height: 100%;
+  background-color: #000000;
+  float: left;
+  position: fixed;
+}
+
+.sidenav_container ul {
+  list-style: none;
+}
+
+.sidenav_container ul li {
+  color: #FFFFFF;
+}
+
+.copyright {
+  font-size: 0.5rem;
+  color: #FFFFFF;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* --- Main Content --- */
+
+.main_container {
+  max-width: rem-calc(75%);
+  width: 75%;
+  float: right;
+  padding: 1rem;
+}
+
+/* --- Typography --- */
+
+p {
+  font-size: 1em;
+  line-height: 1.6;
+}
