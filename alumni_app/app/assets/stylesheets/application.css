@@ -51,8 +51,10 @@ html, body {
 .sidenav_container {
   max-width: rem-calc(25%);
   width: 25%;
+  height: 100%;
   background-color: #000000;
   float: left;
+  position: fixed;
 }
 
 .sidenav_container ul {
@@ -69,5 +71,5 @@ html, body {
 .main_container {
   max-width: rem-calc(75%);
   width: 75%;
-  float: left;
+  float: right;
 }
