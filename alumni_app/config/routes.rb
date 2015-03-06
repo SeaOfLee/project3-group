@@ -12,8 +12,13 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  resources :jobs do
+    collection do
+      get 'search'
+    end
+  end
   
-  resources :jobs
   resources :users do 
     collection do
       get 'search'

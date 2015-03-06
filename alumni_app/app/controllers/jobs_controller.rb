@@ -1,4 +1,12 @@
 class JobsController < ApplicationController
+  def search
+    if params[:search].present?
+      @jobs = Job.search(params[:search])
+    else
+      @jobs = Job.all
+    end
+  end
+
   def index
     @jobs = Job.all
     @jobs = Job.order('created_at DESC').paginate(:page => params[:page], :per_page =>10)
