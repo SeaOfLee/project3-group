@@ -3,28 +3,44 @@
 <head>
   <title>AlumniApp</title>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;libraries=places"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= form_tag search_users_path, method: :get do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag("Search") %>
-<% end %>
+  <div class="container">
+    <div class="sidenav_container">
+      <ul>
+        <li>Home</li>
+        <li>Alumni</li>
+        <li>Forum</li>
+        <li>Jobs</li>
+        <li>Events</li>
+      </ul>
+    </div>
 
-<%= yield %>
-  <hr>
-  Current User ID: <%= session["user_id"].inspect %><br>
-  <%= params.inspect %>
-  <br>
-  <% if current_user != nil %>
-  Logged in as: <%= current_user.email %> |
-  <!-- method delete overrides button's normal behavior of POST -->
-    <%= link_to "Log Out", sessions_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Sign In', new_sessions_path %>
-  <% end %>
+    <div class="main_container">
+    <%= form_tag search_users_path, method: :get do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+    <%= yield %>
+      <hr>
+      Current User ID: <%= session["user_id"].inspect %><br>
+      <%= params.inspect %>
+      <br>
+      <% if current_user != nil %>
+      Logged in as: <%= current_user.email %> |
+      <!-- method delete overrides button's normal behavior of POST -->
+        <%= link_to "Log Out", sessions_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign In', new_sessions_path %>
+      <% end %>
+    </div>
+
+  </div>
 </body>
 </html>
