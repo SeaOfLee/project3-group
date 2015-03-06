@@ -1,4 +1,11 @@
 class EventsController < ApplicationController
+  def search
+    if params[:search].present?
+      @events = Event.search(params[:search])
+    else
+      @events = Event.all
+    end
+  end
   def index
     @events = Event.all
     @events = Event.order('created_at DESC')
