@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  # before_action :authenticate_user!
+  # user_signed_in?
+  # current_user
+  # user_session
+  
   def search
     if params[:search].present?
       @users = User.search(params[:search])
@@ -9,7 +14,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    render json: User.all
+    # render json: User.all
   end
 
   def show
