@@ -1,7 +1,5 @@
-require 'bcrypt'
 class User < ActiveRecord::Base
   searchkick
-  has_secure_password
   has_many :comments
   has_many :posts
   has_many :jobs
