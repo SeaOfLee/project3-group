@@ -3,10 +3,6 @@
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag("Search") %>
     <% end %>
-<h1>Jobs</h1>
-<p><em>Find me in app/views/jobs/index.html.erb</em></p>
-
-<%= link_to "New Job", new_job_path %>
 
 <% @jobs.each do |job| %>
   <h3><%= link_to job.job_title, job %></h3>
@@ -14,5 +10,3 @@
   <p>Posted <%= time_ago_in_words(job.created_at) %> ago by <%= job.user.first_name %> <%= job.user.last_name %></p>
   <hr />
 <% end %>
-
-<%= will_paginate @jobs %>

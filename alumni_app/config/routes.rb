@@ -1,11 +1,24 @@
 Rails.application.routes.draw do
 
   resources :posts do
+    collection do
+      get 'search'
+    end
     resources :comments
   end
 
-  resources :events
-  resources :jobs
+  resources :events do
+    collection do
+      get 'search'
+    end
+  end
+
+  resources :jobs do
+    collection do
+      get 'search'
+    end
+  end
+  
   resources :users do 
     collection do
       get 'search'

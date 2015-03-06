@@ -3,10 +3,6 @@
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag("Search") %>
     <% end %>
-<h1>Events</h1>
-<p><em>Find me in app/views/events/index.html.erb</em></p>
-
-<%= link_to "New Event", new_event_path %>
 
 <% @events.each do |event| %>
   <h3><%= link_to event.event_name, event %></h3>
