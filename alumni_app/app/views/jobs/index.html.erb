@@ -4,9 +4,8 @@
       <%= submit_tag("Search") %>
     <% end %>
 <h1>Jobs</h1>
-<p><em>Find me in app/views/jobs/index.html.erb</em></p>
 
-<%= link_to "New Job", new_job_path %>
+<%= link_to "New Job", new_job_path, class: 'button' %>
 
 <% @jobs.each do |job| %>
   <h3><%= link_to job.job_title, job %></h3>

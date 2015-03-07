@@ -1,5 +1,4 @@
 <h1>Post A New Job</h1>
-<p><em>Find me in app/views/jobs/new.html.erb</em></p>
 
   <%= form_for @job do |f| %>
     <%= f.text_field :job_title, :placeholder => "Enter the job title..." %><br />
@@ -8,7 +7,7 @@
     <%= f.text_field :job_type, :placeholder => "Choose the job type..." %><br />
     <%= f.text_area :description, :placeholder => "Give more details about the job here..." %><br />
     <%= f.text_field :contact, :placeholder => "Enter the contact email.." %><br />
-    <%= f.submit 'Post the job'  %><br />
+    <%= f.submit 'Post the job', class: 'button'  %><br />
   <% end %>
 
 <%= render 'layouts/places' %>

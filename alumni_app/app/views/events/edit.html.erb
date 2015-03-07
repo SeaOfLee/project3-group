@@ -6,7 +6,7 @@
   <%= f.text_field :event_location, id: 'location', :placeholder => "Enter the event location..." %><br />
   <%= f.text_area :event_description, :placeholder => "Describe the event..." %><br />
   <%= f.text_field :event_site, :placeholder => "Link to the event website..." %><br />
-  <%= f.submit 'Update your event'  %><br />
+  <%= f.submit 'Update your event', class: 'button'  %><br />
 <% end %>
 
 <%= link_to "Cancel", event_path %>

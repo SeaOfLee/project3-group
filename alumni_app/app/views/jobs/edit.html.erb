@@ -8,7 +8,7 @@
   <%= f.text_field :job_type, :placeholder => "Choose the job type..." %><br />
   <%= f.text_area :description, :placeholder => "Give more details about the job here..." %><br />
   <%= f.text_field :contact, :placeholder => "Enter the contact email.." %><br />
-  <%= f.submit 'Update your job listing'  %><br />
+  <%= f.submit 'Update your job listing', class: 'button'  %><br />
 <% end %>
 
 <%= link_to "Cancel", job_path %>
