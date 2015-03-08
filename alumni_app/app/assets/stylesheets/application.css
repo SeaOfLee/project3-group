@@ -84,14 +84,22 @@ html, body {
   background-color: #000000;
   float: left;
   position: fixed;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .sidenav_container ul {
   list-style: none;
 }
 
-.sidenav_container ul li {
+.sidenav_container ul li a {
   color: #FFFFFF;
+  text-decoration: none;
+}
+
+.sidenav_container ul li a:hover {
+  color: #fa4542;
 }
 
 .copyright {
@@ -126,6 +134,16 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+a {
+  color: #fa4542;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fa4542;
+  text-decoration: underline;
+}
+
 .label {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -136,6 +154,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8em;
   color: #969696;
   font-style: italic;
+}
+
+.edit_delete {
+  font-size: 0.8em;
+  float: right;
 }
 
 hr {
