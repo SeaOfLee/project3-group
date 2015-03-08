@@ -3,31 +3,38 @@
     <h1>Edit Your Event</h1>
   </div>
 </div>
+
 <%= form_for @event do |f| %>
+
 <div class='row clearfix'>
   <div class='column third'><%= f.text_field :event_name, :placeholder => "Enter the event name..." %></div>
   <div class='column third'><%= f.date_field :event_date, :placeholder => "Enter the event date..." %></div>
-  <div class='column third'><%= f.time_field :event_name, :placeholder => "Enter the event time..." %></div>
+  <div class='column third'><%= f.time_field :event_time, :placeholder => "Enter the event time..." %></div>
 </div>
+
 <div class='row clearfix'>
   <div class='column full'><%= f.text_field :event_location, id: 'location', :placeholder => "Enter the event location..." %>
   </div>
 </div>
+
   <div class='row clearfix'>
     <div class='column full'>
       <%= f.text_area :event_description, :placeholder => "Describe the event..." %>
     </div>
   </div>
+
   <div class='row clearfix'>
     <div class='column full'>
       <%= f.text_field :event_site, :placeholder => "Link to the event website..." %>
     </div>
   </div>
+
   <div class='row clearfix'>
     <div class='column full'>
       <%= f.submit 'Update your event', class: 'button'  %> <%= link_to "Cancel", event_path %>
     </div>
   </div>
+
 <% end %>
 
 <%= render 'layouts/places' %>

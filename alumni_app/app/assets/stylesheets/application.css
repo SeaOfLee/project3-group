@@ -58,6 +58,8 @@ html, body {
   .column.half { width: 50%; }
   .column.third { width: 33.3%; }
   .column.fourth { width: 25%; }
+  .column.fifth { width: 20%; }
+  .column.two-fifths { width: 80%; }
   .column.flow-opposite { float: right; }
 }
 
@@ -108,6 +110,7 @@ html, body {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  text-transform: none;
 }
 
 /* --- Main Content --- */
@@ -154,11 +157,17 @@ a:hover {
   font-size: 0.8em;
   color: #969696;
   font-style: italic;
+  font-family: 'Gentium Basic', serif;
 }
 
 .edit_delete {
   font-size: 0.8em;
   float: right;
+  font-family: 'Gentium Basic', serif;
+}
+
+.content_title {
+  color: #000000;
 }
 
 hr {
@@ -185,6 +194,8 @@ hr {
 
 .button:hover {
   background-color: #e02a27;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 input[type=submit] {
