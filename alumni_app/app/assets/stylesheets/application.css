@@ -95,6 +95,10 @@ html, body {
   list-style: none;
 }
 
+.sidenav_container ul li {
+  line-height: 2em;
+}
+
 .sidenav_container ul li a {
   color: #FFFFFF;
   text-decoration: none;
