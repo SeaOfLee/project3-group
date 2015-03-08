@@ -1,12 +1,19 @@
-<h1>Post A New Job</h1>
+<div class='row clearfix'>
+  <div class='column full'>
+    <h1>Post a New Job</h1>
+  </div>
+</div>
   <%= form_for @job do |f| %>
   <div class='row clearfix'>
-      <div class='column third'><%= f.text_field :job_title, :placeholder => "Enter the job title..." %></div>
-      <div class='column third'><%= f.text_field :company, :placeholder => "Enter the company name..." %></div>
-      <div class='column third'><%= f.text_field :job_type, :placeholder => "Choose the job type..." %></div>
+      <div class='column half'><%= f.text_field :job_title, :placeholder => "Enter the job title..." %></div>
+      <div class='column half'><%= f.text_field :company, :placeholder => "Enter the company name..." %></div>
+      
   </div>
   <div class='row clearfix'>    
-      <div class='column half'><%= f.text_field :location, id: 'location', :placeholder => "Enter the job location..." %></div>
+      <div class='column full'><%= f.text_field :location, id: 'location', :placeholder => "Enter the job location..." %></div>
+  </div>
+  <div class='row clearfix'>    
+      <div class='column half'><%= f.text_field :job_type, :placeholder => "Choose the job type..." %></div>
       <div class='column half'><%= f.text_field :contact, :placeholder => "Enter the contact email.." %></div>
   </div>
   <div class='row clearfix'>    

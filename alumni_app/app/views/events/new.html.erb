@@ -1,12 +1,34 @@
-<h1>Post A New Event</h1>
-<p><em>Find me in app/views/events/new.html.erb</em></p>
+<div class='row clearfix'>
+  <div class='column full'>
+    <h1>Post A New Event</h1>
+  </div>
+</div>
 
 <%= form_for @event do |f| %>
-  <%= f.text_field :event_name, :placeholder => "Enter the event name..." %><br />
-  <%= f.text_field :event_location, id: 'location', :placeholder => "Enter the event location..." %><br />
-  <%= f.text_area :event_description, :placeholder => "Describe the event..." %><br />
-  <%= f.text_field :event_site, :placeholder => "Link to the event website..." %><br />
-  <%= f.submit 'Post your event', class: 'button'  %><br />
+<div class='row clearfix'>
+  <div class='column third'><%= f.text_field :event_name, :placeholder => "Enter the event name..." %></div>
+  <div class='column third'><%= f.date_field :event_date, :placeholder => "Enter the event date..." %></div>
+  <div class='column third'><%= f.time_field :event_time, :placeholder => "Enter the event time..." %></div>
+</div>
+<div class='row clearfix'>
+  <div class='column full'><%= f.text_field :event_location, id: 'location', :placeholder => "Enter the event location..." %>
+  </div>
+</div>
+  <div class='row clearfix'>
+    <div class='column full'>
+      <%= f.text_area :event_description, :placeholder => "Describe the event..." %>
+    </div>
+  </div>
+  <div class='row clearfix'>
+    <div class='column full'>
+      <%= f.text_field :event_site, :placeholder => "Link to the event website..." %>
+    </div>
+  </div>
+  <div class='row clearfix'>
+    <div class='column full'>
+      <%= f.submit 'Post your event', class: 'button'  %>
+    </div>
+  </div>
 <% end %>
 
 <div id="map-canvas"></div>

@@ -202,3 +202,37 @@ textarea:focus {
   box-shadow: 0 0 5px 1px #ffee31;
   outline: none;
 }
+
+input[type=date] {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: #969696 2px solid;
+  padding: 0.5rem;
+  font-size: .8em;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+input[type=date]:focus {
+  border: solid 1px #fdde29 ;
+  box-shadow: 0 0 5px 1px #ffee31;
+  outline: none;
+}
+
+input[type=time] {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: #969696 2px solid;
+  padding: 0.5rem;
+  font-size: .8em;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+input[type=time]:focus {
+  border: solid 1px #fdde29 ;
+  box-shadow: 0 0 5px 1px #ffee31;
+  outline: none;
+}
