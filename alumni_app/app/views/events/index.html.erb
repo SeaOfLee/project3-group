@@ -4,13 +4,12 @@
       <%= submit_tag("Search") %>
     <% end %>
 <h1>Events</h1>
-<p><em>Find me in app/views/events/index.html.erb</em></p>
 
-<%= link_to "New Event", new_event_path %>
+<%= link_to "New Event", new_event_path, class: 'button' %>
 
 <% @events.each do |event| %>
   <h3><%= link_to event.event_name, event %></h3>
   <p><%= event.event_location %></p>
-  <p>Posted <%= time_ago_in_words(event.created_at) %> ago by <%= event.user.first_name %> <%= event.user.last_name %></p>
+  <p><span class='post_time'>Posted <%= time_ago_in_words(event.created_at) %> ago by <%= event.user.first_name %> <%= event.user.last_name %></span></p>
   <hr />
 <% end %>
