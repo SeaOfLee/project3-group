@@ -1,17 +1,35 @@
-<%= form_tag search_jobs_path, method: :get do %>
-      <%= label_tag(:q, "Search for:") %>
-      <%= text_field_tag :search, params[:search] %>
+<div class='row clearfix'>
+  <div class='column two-fifths'>
+    <%= form_tag search_jobs_path, method: :get do %>
+      <%= text_field_tag :search, params[:search], :placeholder => "Search in jobs:" %>
+  </div>
+  <div class='column fifth'>
       <%= submit_tag("Search") %>
     <% end %>
-<h1>Jobs</h1>
+  </div>
+</div>
 
-<%= link_to "New Job", new_job_path, class: 'button' %>
+<div class='row clearfix'>
+  <div class='column full'>
+    <h1>Most Recent Jobs</h1>
+  </div>
+</div>
 
-<% @jobs.each do |job| %>
-  <h3><%= link_to job.job_title, job %></h3>
-  <p><%= job.company %>, <%= job.location %></p>
-  <p><span class='post_time'>Posted <%= time_ago_in_words(job.created_at) %> ago by <%= job.user.first_name %> <%= job.user.last_name %></span></p>
-  <hr />
-<% end %>
+<div class='row clearfix'>
+  <div class='column full'>
+  <%= link_to "Post A New Job", new_job_path, class: 'button' %>
+  </div>
+</div>
 
-<%= will_paginate @jobs %>
+<div class='row clearfix'>
+  <div class='column full'>
+    <% @jobs.each do |job| %>
+      <h2><%= link_to job.job_title, job, class: 'content_title' %></h2>
+      <p><span class='label'>Company: </span><%= job.company %><br />
+         <span class='label'>Location: </span><%= job.location %></p>
+      <p><span class='post_time'>Posted <%= time_ago_in_words(job.created_at) %> ago by <%= job.user.first_name %> <%= job.user.last_name %></span></p>
+      <hr />
+    <% end %>
+    <%= will_paginate @jobs %>
+  </div>
+</div>

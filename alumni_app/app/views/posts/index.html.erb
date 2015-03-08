@@ -3,12 +3,12 @@
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag("Search") %>
     <% end %>
-<h1>Posts</h1>
+<h1>Most Recent Posts</h1>
 
   <%= link_to "New Post", new_post_path, class: 'button' %>
 
   <% @posts.each do |post| %>
-    <h3><%= link_to post.title, post %></h3>
+    <h2><%= link_to post.title, post, class: 'content_title' %></h2>
     <p><span class='post_time'>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.first_name %> <%= post.user.last_name %></span></p>
     <p><%= post.comments.count %> replies</p>
     <hr />
