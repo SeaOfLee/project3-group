@@ -39,8 +39,12 @@ RSpec.describe User, :type => :model do
     it { should validate_uniqueness_of(:email) }
   end
 
-  # describe "validates that users have many comments through posts" do
-  #   it { expect(user).to have_many(:comments).through(:posts) }
-  # end
+  describe "invalidates invalid email" do
+    it { should_not allow_value("test@test").for(:email) }
+  end
 
+  describe "validates valid email" do
+    it { should allow_value("test@test.com").for(:email) }
+  end
+  
 end
