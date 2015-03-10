@@ -2,19 +2,19 @@ require 'rails_helper'
 
 describe UsersController do
   before(:each) do
-    @user1 = User.create(first_name:'Lee', last_name:'Richardson', email:'lee@lee.com', password: '123')
-    @user2 = User.create(first_name:'Lee', last_name:'Richardson', email:'lee@lee.com', password: '123')
+    @user1 = User.create(first_name:'Lee', last_name:'Richardson', email:'lee@lee.com', password: 'password123')
+    @user2 = User.create(first_name:'Lee', last_name:'Richardson', email:'lee@me.com', password: 'password123')
   end
 
   describe "GET #index" do
     before(:each) do
       get :index
     end
-    
+
     it 'should render the correct page' do
       expect(response).to render_template :index
     end
-    
+
     it "should have status code of 200" do
       expect(response).to have_http_status(200)
     end
@@ -63,7 +63,7 @@ describe UsersController do
   # end
 
   # describe "DELETE #destroy" do
-  #   before do 
+  #   before do
   #     @test_user = User.create
   #     get :index
   #   end
@@ -72,8 +72,7 @@ describe UsersController do
   #     expect{delete :destroy, id: @test_user.id}.to change(User, :count).by(-1)
   #   end
 
-    
+
 
 
   end
-
