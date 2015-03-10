@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe PostsController do 
+describe PostsController do
   before(:each) do
     @post1 = Post.create(title: 'title', content: 'this is good content')
-    @post2 = Post.create(title: 'title', content: 'this is good content')
+    @post2 = Post.create(title: 'title2', content: 'this is even better content')
   end
 
   describe "GET #index" do
@@ -14,7 +14,7 @@ describe PostsController do
     it "should render the correct page" do
       expect(response).to render_template :index
     end
-    
+
     it "should have status code of 200" do
       expect(response).to have_http_status(200)
     end
