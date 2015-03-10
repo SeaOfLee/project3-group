@@ -1,3 +1,5 @@
+<div x-ng-app='alumniApp' x-ng-controller='postsCtrl'>
+
 <%= form_tag search_posts_path, method: :get do %>
       <%= label_tag(:q, "Search for:") %>
       <%= text_field_tag :search, params[:search] %>
@@ -6,6 +8,13 @@
 <h1>Most Recent Posts</h1>
 
   <%= link_to "New Post", new_post_path, class: 'button' %>
+  
+<div x-ng-repeat='p in posts track by $index'>
+  <p>{{p.title}}</p>
+  <p>{{p.content}}</p>
+</div>
+
+</div>
 
   <% @posts.each do |post| %>
     <h2><%= link_to post.title, post, class: 'content_title' %></h2>

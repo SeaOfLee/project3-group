@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def search
     if params[:search].present?
       @posts = Post.search(params[:search])
