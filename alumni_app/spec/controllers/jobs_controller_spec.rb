@@ -2,19 +2,19 @@ require 'rails_helper'
 
 describe JobsController do
   before(:each) do
-    @job1 = Job.create(job_title: "Developer")
-    @job2 = Job.create(job_title: "Manager")
+    @job1 = Job.create(job_title: "Developer", company: "Google", location: "Santa Monica, CA", job_type: "Remote", contact: "lee@me.com", description: "Who cares, it's Google.")
+    @job2 = Job.create(job_title: "Manager", company: "JibJab", location: "Venice, CA", job_type: "Full-Time", contact: "katie@me.com", description: "Elitists only.")
   end
 
   describe "GET #index" do
     before(:each) do
       get :index
     end
-    
+
     it 'should render the correct page' do
       expect(response).to render_template :index
     end
-    
+
     it "should have status code of 200" do
       expect(response).to have_http_status(200)
     end

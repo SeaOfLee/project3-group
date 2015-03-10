@@ -6,6 +6,7 @@ FactoryGirl.define do
     first_name "bob"
     last_name  "siamese"
     email "bob@siamese.com"
+    password "password123"
 
     initialize_with { new(first_name, last_name, email) }
   end
