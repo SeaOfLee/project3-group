@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe PostsController do
   before(:each) do
-    @post1 = Post.create(title: 'title', content: 'this is good content')
-    @post2 = Post.create(title: 'title2', content: 'this is even better content')
+    @post1 = Post.create(title: 'title', content: 'this is good content', id: "136")
+    @post2 = Post.create(title: 'title2', content: 'this is even better content', id: "137")
   end
 
   describe "GET #index" do
@@ -53,7 +53,7 @@ describe PostsController do
 
   describe "POST #create" do
     it "persists an item to the DB" do
-      expect{Post.create}.to change(Post, :count).by(1)
+      expect{Post.create(title: 'Test 4', content: 'yeehaw', id: "148")}.to change(Post, :count).by(1)
       # expect {post :create, item: valid_attributes}.to change(Item, :count).by(1)
       # like get :index or :new
     end
@@ -61,7 +61,7 @@ describe PostsController do
 
   describe "DELETE #destroy" do
     before do
-      @test_post = Post.create
+      @test_post = Post.create(title: 'Test 3', content: 'woooo', id: "143")
       get :index
     end
 
