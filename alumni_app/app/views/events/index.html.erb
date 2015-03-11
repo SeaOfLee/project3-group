@@ -30,5 +30,6 @@
          <p><span class='post_time'>Posted <%= time_ago_in_words(event.created_at) %> ago by <%= event.user.first_name %> <%= event.user.last_name %></span></p>
       <hr />
     <% end %>
+    <%= will_paginate @events %>
   </div>
 </div>
