@@ -34,8 +34,8 @@
         <td><%= u.cohort %></td>
         <td><%= u.bio %></td>
         <td><%= link_to 'View ', u %>|</td>
-        <td><%= link_to ' Edit ', edit_user_path(u) %> |</td>
-        <td><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% if current_user == @user %><%= link_to ' Edit ', edit_user_path(u) %><% end %> |</td>
+        <td><% if current_user == @user %><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
       </tr>
     <% end %>
   </tbody>
