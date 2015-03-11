@@ -25,13 +25,27 @@ end
     )
 end
 
-# 20.times do
-#   Job.create(
-#     company: Faker::App.name,
-#     location: Faker::Address.city,
-#     description: Faker::Lorem.paragraphs(2),
-#     contact: Faker::Name.name,
-#     job_title: Faker::Lorem.word,
-#     user_id: Faker::Number.number(2)
-#     )
-# end
+20.times do
+  Job.create(
+    company: Faker::Company.name,
+    description: Faker::Lorem.paragraphs(1),
+    contact: Faker::Name.name,
+    job_title: Faker::Lorem.word,
+    user_id: Faker::Number.number(2),
+    location: Faker::Address.city,
+    job_type: "Full-Time",
+    created_at: 20141204000000
+    )
+end
+
+20.times do
+  Event.create(
+    event_name: Faker::Company.name,
+    event_description: Faker::Lorem.paragraphs(1),
+    event_date: Faker::Time.forward(30),
+    user_id: Faker::Number.number(2),
+    event_site: Faker::Company.name,
+    event_time: '7:30 PM',
+    event_location: Faker::Address.city,
+    )
+end
