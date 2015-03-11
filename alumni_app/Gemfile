@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'faker', git: "https://github.com/stympy/faker.git"
 gem 'aws-sdk', '< 2.0'
 gem 'figaro'
+gem 'devise'
 # paperclip gem for images
 gem "paperclip", "~> 4.2"
 # bcrypt gem for authentication
