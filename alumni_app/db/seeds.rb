@@ -17,9 +17,21 @@
     )
 end
 
+20.times do
+  Post.create(
+    title: Faker::App.name,
+    content: Faker::Lorem.paragraphs(2),
+    user_id: Faker::Number.number(2)
+    )
+end
+
 # 20.times do
-#   Post.create(
-#     title: Faker::App.name,
-#     content: Faker::Lorem.paragraphs(2),
+#   Job.create(
+#     company: Faker::App.name,
+#     location: Faker::Address.city,
+#     description: Faker::Lorem.paragraphs(2),
+#     contact: Faker::Name.name,
+#     job_title: Faker::Lorem.word,
+#     user_id: Faker::Number.number(2)
 #     )
 # end
