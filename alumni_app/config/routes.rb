@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :user
+  devise_for :users
+
   resources :posts do
     collection do
       get 'search'
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resource :sessions, only: [:new, :create, :destroy]
+#  resource :sessions, only: [:new, :create, :destroy]
 
   get 'pages/dashboard'
   root to: "users#index"
