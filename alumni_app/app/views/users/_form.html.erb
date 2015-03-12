@@ -7,7 +7,7 @@
       <%= f.text_field :postal_code, :placeholder => "ZIP/Postal Code" %><br />
       <%= f.text_field :country, :placeholder => "Country" %><br />
       <%= f.text_field :program_attended, :placeholder => "Program Attended" %><br />
-      <%= f.text_field :campus, id: 'location', :placeholder => "Campus" %><br />
+      <%= select(:user, :campus, [['Atlanta'], ['Austin'], ['Boston'], ['Chicago'], ['Hong Kong'], ['London'], ['Los Angeles'], ['Melbourne'], ['New York'], ['San Francisco'], ['Seattle'], ['Sydney'], ['Washington D.C.']]) %><br>
       <%= f.text_field :cohort, :placeholder => "Cohort" %><br />
       <%= f.text_field :bio, :placeholder => "Short Bio" %><br />
       <%= f.file_field :avatar %> <br />
