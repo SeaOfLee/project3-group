@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :posts do
     collection do
       get 'search'
@@ -18,21 +19,22 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-
-  resources :users do
+  
+  resources :users do 
     collection do
       get 'search'
     end
   end
-  resource :sessions, only: [:new, :create, :destroy]
+#  resource :sessions, only: [:new, :create, :destroy]
 
   get 'pages/dashboard'
+  root to: "users#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#index'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

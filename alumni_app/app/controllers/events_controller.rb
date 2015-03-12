@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   end
   def index
     @events = Event.all
-    @events = Event.order('created_at DESC').paginate(:page => params[:page], :per_page =>10)
+    @events = Event.order('created_at DESC')
   end
 
   def new

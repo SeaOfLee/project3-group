@@ -44,7 +44,6 @@ html, body {
   max-width: rem-calc(100%);
   width: 100%;
   position: relative;
-  padding: 0;
 }
 
 @media (min-width: 40rem) {
@@ -271,67 +270,3 @@ input[type=time]:focus {
   box-shadow: 0 0 5px 1px #ffee31;
   outline: none;
 }
-
-input[type=password] {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border: #969696 2px solid;
-  padding: 0.5rem;
-  font-size: .8em;
-  width: 100%;
-  margin: 10px 0px 10px 0px;
-}
-
-input[type=password]:focus {
-  border: solid 1px #fdde29 ;
-  box-shadow: 0 0 5px 1px #ffee31;
-  outline: none;
-}
-
-select {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border: #969696 2px solid;
-  padding: 0.5rem;
-  font-size: .8em;
-  width: 100%;
-  margin: 10px 0px 10px 0px;
-}
-
-select:focus {
-  border: solid 1px #fdde29 ;
-  box-shadow: 0 0 5px 1px #ffee31;
-  outline: none;
-}
-
-/*--Splash Styling--*/
-.splash{
-  background-color: #000000;
-  width: 50%;
-  margin: 50px auto;
-  padding: 20px;
-}
-
-.splash p{
-  text-align: center;
-  color: #FFFFFF;
-}
-
-.splash h1{
-  text-align: center;
-  color: #FFFFFF;
-}
-
-.buttons {
-  margin: 40px auto 20px auto;
-  width: 200px;
-}
-
-
-
-
-
-
-

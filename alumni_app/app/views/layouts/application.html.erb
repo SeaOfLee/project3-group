@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- <div class="container">
+  <div class="container">
     <div class="sidenav_container">
       <ul>
         <li><a href="/pages/dashboard">Home</a></li>
@@ -23,12 +23,30 @@
       <p class="copyright">Made with &hearts; by Katie Kelleher, Lee Richardson &amp; Lauren Pawell.
     </div>
 
-    <div class="main_container"> -->
+    <div class="main_container">
 
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
+      <hr>
+      Current User ID: <%= session["user_id"].inspect %><br>
+      <%= params.inspect %>
+      <br>
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+    </div>
 
-    <!-- </div> -->
-
+  </div>
 </body>
 </html>

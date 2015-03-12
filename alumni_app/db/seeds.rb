@@ -11,7 +11,7 @@
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    current_location: Faker::Address.city,
+    postal_code: Faker::Address.postcode,
     campus: Faker::Address.city,
     bio: Faker::Hacker.say_something_smart,
     )
