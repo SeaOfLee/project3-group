@@ -2,9 +2,66 @@
 
   <div class="main_container">
 
-    <h1>New User Sign Up</h1>
+    <div class='row clearfix'>
+      <div class='column full'>
+        <h1>New User Sign Up</h1>
+      </div>
+    </div>
 
-    <%= render 'form' %>
+    <%= form_for @user do |f| %>
+      <div class='row clearfix'>
+        <div class='column third'>
+        <%= f.text_field :first_name, :placeholder => "First Name" %>
+        </div>
+        <div class='column third'>
+          <%= f.text_field :last_name, :placeholder => "Last Name" %>
+        </div>
+        <div class='column third'>
+          <%= f.text_field :email, :placeholder => "Email" %>
+        </div>
+      </div>
+      <div class='row clearfix'>
+        <div class='column half'>
+          <%= f.password_field :password, :placeholder => "Password" %>
+        </div>
+        <div class='column half'>
+          <%= f.password_field :password_confirmation, :placeholder => "Password" %>
+        </div>
+      </div>
+      <div class='row clearfix'>
+        <div class='column full'>
+          <%= f.text_field :current_location, id: 'location', :placeholder => "Current Location" %>
+        </div>
+      </div>
+      <div class='row clearfix'>
+        <div class='column third'>
+          <%= select(:user, :program_attended, [['Product Management'], ['User Experience Design'], ['Web Development']]) %>
+        </div>
+        <div class='column third'>
+          <%= select(:user, :campus, [['Atlanta'], ['Austin'], ['Boston'], ['Chicago'], ['Hong Kong'], ['London'], ['Los Angeles'], ['Melbourne'], ['New York'], ['San Francisco'], ['Seattle'], ['Sydney'], ['Washington D.C.']]) %>
+        </div>
+        <div class='column third'>
+          <%= f.text_field :cohort, :placeholder => "Cohort" %>
+        </div>
+      </div>
+      <div class='row clearfix'>
+        <div class='column full'>
+          <%= f.text_field :bio, :placeholder => "Short Bio" %>
+        </div>
+      </div>
+      <div class='row clearfix'>
+        <div class='column full'>
+          <%= f.file_field :avatar %>
+        </div>
+      </div>
+      <div class='row clearfix'>
+        <div class='column full'>
+      <%= f.submit 'Submit', class: 'button'  %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= render 'layouts/places' %>
 
     <hr>
     Current User ID: <%= session["user_id"].inspect %><br>
