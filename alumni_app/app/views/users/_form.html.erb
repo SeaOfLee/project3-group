@@ -4,8 +4,7 @@
       <%= f.text_field :email, :placeholder => "Email" %><br />
       <%= f.password_field :password, :placeholder => "Password" %><br />
       <%= f.password_field :password_confirmation, :placeholder => "Password" %><br />
-      <%= f.text_field :postal_code, :placeholder => "ZIP/Postal Code" %><br />
-      <%= f.text_field :country, :placeholder => "Country" %><br />
+      <%= f.text_field :current_location, id: 'location', :placeholder => "Current Location" %><br />
       <%= select(:user, :program_attended, [['Product Management'], ['User Experience Design'], ['Web Development']]) %><br>
       <%= select(:user, :campus, [['Atlanta'], ['Austin'], ['Boston'], ['Chicago'], ['Hong Kong'], ['London'], ['Los Angeles'], ['Melbourne'], ['New York'], ['San Francisco'], ['Seattle'], ['Sydney'], ['Washington D.C.']]) %><br>
       <%= f.text_field :cohort, :placeholder => "Cohort" %><br />
