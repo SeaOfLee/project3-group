@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308001011) do
+ActiveRecord::Schema.define(version: 20150312022852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,8 +67,6 @@ ActiveRecord::Schema.define(version: 20150308001011) do
     t.string   "email"
     t.string   "password_digest"
     t.boolean  "is_admin"
-    t.string   "postal_code"
-    t.string   "country"
     t.string   "program_attended"
     t.string   "campus"
     t.string   "cohort"
@@ -79,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150308001011) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "current_location"
   end
 
   add_foreign_key "comments", "posts"
